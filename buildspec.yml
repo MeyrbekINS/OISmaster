@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    AWS_ACCOUNT_ID: "YOUR_AWS_ACCOUNT_ID" # Replace with your AWS Account ID
+    AWS_ACCOUNT_ID: "305362906248" # Replace with your AWS Account ID
     IMAGE_REPO_NAME: "ois-fetcher"         # Replace with your desired ECR repository name
     IMAGE_TAG: "latest"
     AWS_DEFAULT_REGION: "eu-north-1"       # Replace with your AWS region
