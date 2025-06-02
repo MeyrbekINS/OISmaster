@@ -6,7 +6,7 @@ from datetime import datetime, timezone # Added timezone
 
 # Configuration
 API_URL = "https://api.investing.com/api/financialdata/1199741/historical/chart/?interval=P1D&pointscount=160"
-DYNAMODB_TABLE_NAME = os.environ.get('DYNAMODB_TABLE_NAME', 'RealTimeChartData')
+DYNAMODB_TABLE_NAME = os.environ.get('DYNAMODB_TABLE_NAME', 'OISRATES')
 METRIC_ID = os.environ.get('METRIC_ID', 'CALCULATED_OIS_1M_RATE') # Renamed for clarity (1M for 1-month)
 AWS_REGION = os.environ.get('AWS_REGION', 'eu-north-1')
 
