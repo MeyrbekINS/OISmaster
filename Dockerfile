@@ -15,7 +15,7 @@ COPY OIS_Fetcher.py .
 
 # Set environment variables
 # --- IMPORTANT: Update DYNAMODB_TABLE_NAME if you created a new one ---
-ENV DYNAMODB_TABLE_NAME="OISRATES" # Or your new table name like "OISData"
+ENV DYNAMODB_TABLE_NAME="OISRATES" 
 ENV METRIC_ID="CALCULATED_OIS_1M_RATE"
 ENV AWS_REGION="eu-north-1" # Your AWS region
 
