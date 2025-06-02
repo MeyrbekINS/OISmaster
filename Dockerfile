@@ -17,7 +17,7 @@ COPY OIS_Fetcher.py .
 # --- IMPORTANT: Update DYNAMODB_TABLE_NAME if you created a new one ---
 ENV DYNAMODB_TABLE_NAME="OISRATES" 
 ENV METRIC_ID="CALCULATED_OIS_1M_RATE"
-ENV AWS_REGION="eu-north-1" # Your AWS region
+ENV AWS_REGION="eu-north-1"
 
 # Run OIS_Fetcher.py when the container launches
 CMD ["python", "OIS_Fetcher.py"]
