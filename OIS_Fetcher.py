@@ -20,7 +20,13 @@ dynamodb_client = boto3.client('dynamodb', region_name=AWS_REGION)
 def fetch_ois_data():
     """Fetches raw Fed Funds futures data from Investing.com API using cloudscraper."""
     print(f"Fetching Fed Funds futures data from: {API_URL} using cloudscraper")
-    scraper = cloudscraper.create_scraper()
+    scraper = cloudscraper.create_scraper(
+        browser={
+            'browser': 'chrome',
+            'platform': 'windows',
+            'mobile': False
+        }
+    )
     try:
         response = scraper.get(API_URL)
         response.raise_for_status()
