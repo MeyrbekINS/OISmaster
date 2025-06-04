@@ -3,6 +3,7 @@ import boto3
 import os
 import time
 from datetime import datetime, timezone
+import requests
 
 # Configuration
 API_URL = "https://api.investing.com/api/financialdata/1199741/historical/chart/?interval=P1D&pointscount=160"
