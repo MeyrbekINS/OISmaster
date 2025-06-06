@@ -1,3 +1,4 @@
-cloudscraper
+yfinance
+pandas
 boto3
-requests # cloudscraper depends on requests, but good to be explicit
+requests
