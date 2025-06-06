@@ -22,8 +22,8 @@ def fetch_ois_data():
     print(f"Fetching Fed Funds futures data from: {API_URL} using cloudscraper")
     scraper = cloudscraper.create_scraper(
         browser={
-            'browser': 'chrome',
-            'platform': 'linux',
+            'browser': 'firefox',
+            'platform': 'windows',
             'mobile': False
         }
     )
