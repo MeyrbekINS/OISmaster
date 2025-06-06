@@ -21,8 +21,8 @@ phases:
     commands:
       - echo "Attempting to log in to Docker Hub..."
       # For debugging, let's see if the variables are set AT ALL by the time this command runs
-      - echo "Username from env: "[$DOCKERHUB_USERNAME]"
-      - echo "Password from env: "[$DOCKERHUB_PASSWORD]" # STILL BE CAUTIOUS WITH THIS
+      - echo "Username from env: [$DOCKERHUB_USERNAME]"
+      - echo "Password from env: [$DOCKERHUB_PASSWORD]" # STILL BE CAUTIOUS WITH THIS
       # Ensure these exact variable names are used in docker login
       - docker login --username "$DOCKERHUB_USERNAME" --password "$DOCKERHUB_PASSWORD"
       - echo "Docker login command executed. Exit code: $?" # Check exit code
