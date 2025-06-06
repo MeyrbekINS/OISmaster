@@ -13,13 +13,13 @@ env:
 phases:
   pre_build:
     commands: 
-      - echo "Attempting to log in to Docker Hub...", 
-      - echo "Username from env: [$DOCKERHUB_USERNAME]"
+      - echo: "Attempting to log in to Docker Hub..."
+      - echo: "Username from env: [$DOCKERHUB_USERNAME]"
       - docker login --username "$DOCKERHUB_USERNAME" --password "$DOCKERHUB_PASSWORD"
-      - echo "Docker login command executed. Exit code: $?"
-      - echo "Logging in to Amazon ECR..."
+      - echo: "Docker login command executed. Exit code: $?"
+      - echo: "Logging in to Amazon ECR..."
       - aws ecr get-login-password --region $AWS_ACCOUNT_ID | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
-      - echo "ECR login command executed. Exit code: $?"
+      - echo: "ECR login command executed. Exit code: $?"
       - |
         aws ecr describe-repositories --repository-names $IMAGE_REPO_NAME --region $AWS_DEFAULT_REGION \
         > /dev/null 2>&1 || \
