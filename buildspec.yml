@@ -5,6 +5,7 @@ env:
     IMAGE_REPO_NAME: "ois-fetcher"
     IMAGE_TAG: "latest"
     AWS_DEFAULT_REGION: "eu-north-1"
+    secrets-manager: empty
 phases:
   build:
     commands:
