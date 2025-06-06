@@ -25,7 +25,7 @@ phases:
         > /dev/null 2>&1 || \
         aws ecr create-repositry --repository-names $IMAGE_REPO_NAME --region $AWS_DEFAULT_REGION --image-scanning-configuration scanOnPush=true --image-tag-mutability MUTABLE \
         > /dev/null
-  build
+  build:
     commands:
       - echo: Build started on 'date'
       - echo: Building the Docker image...
