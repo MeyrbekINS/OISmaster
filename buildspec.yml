@@ -12,8 +12,8 @@ env:
 
 phases:
   pre_build:
-    commands:
-        - echo "Attempting to log in to Docker Hub..."
+    commands: 
+      - echo "Attempting to log in to Docker Hub..."
       - echo "Username from env: [$DOCKERHUB_USERNAME]"
       - docker login --username "$DOCKERHUB_USERNAME" --password "$DOCKERHUB_PASSWORD"
       - echo "Docker login command executed. Exit code: $?"
