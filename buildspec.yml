@@ -8,7 +8,7 @@ env:
     AWS_DEFAULT_REGION: "eu-north-1"       # Replace with your AWS region
   secrets-manager: # Add this section
     DOCKERHUB_USERNAME: "meyrbekturan" # SecretName:JSONKey
-    DOCKERHUB_PASSWORD: "1298meyrbek" # SecretName:JSONKey
+    DOCKERHUB_PASSWORD: "dckr_pat_EFDsTIqfrTtIoE44i1FOmqhR7to" # SecretName:JSONKey
 
 
 phases:
