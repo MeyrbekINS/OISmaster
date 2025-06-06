@@ -1,6 +1,6 @@
 version
 
-env
+env:
   variables:
     AWS_ACCOUNT_ID: "305362906248"
     IMAGE_REPO_NAME: "ois-fetcher"
