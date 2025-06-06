@@ -1,12 +1,32 @@
-version: 0.2
-env:
+version
+
+env
   variables:
     AWS_ACCOUNT_ID: "305362906248"
     IMAGE_REPO_NAME: "ois-fetcher"
     IMAGE_TAG: "latest"
     AWS_DEFAULT_REGION: "eu-north-1"
-  secrets-manager: empty
+  secret-manager:
+    DOCKERHUB_USERNAME: "DockerHubCredentials1:username"
+    DOCKERHUB_PASSWORD: "DockerHubCredentials1:password"
+
 phases:
-  build:
+  pre_build:
     commands:
-      - echo "Minimal buildspec parsed and executed!"
+      - echo "Attempting to log in to Docker Hub..."
+      - echo "Username from env: [$DOCKERHUB_USERNAME]"
+      - docker login --username "$DOCKERHUB_USERNAME" --password "$DOCKERHUB_PASSWORD"
+      - echo "Docker login command executed. Exit code: $?"
+      - echo "Logging in to Amazon ECR..."
+      - aws ecr get-login-password --region $AWS_ACCOUNT_ID | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - echo "ECR login command executed. Exit code: $?"
+      - |
+        aws ecr describe-repositories --repository-names $IMAGE_REPO_NAME --region $AWS_DEFAULT_REGION > /dev/null 2>&1 || \
+        aws ecr create-repositry --repository-names $IMAGE_REPO_NAME --region $AWS_DEFAULT_REGION --image-scanning-configuration scanOnPush=true --image-tag-mutability MUTABLE > /dev/null
+  build
+    commands:
+      - echo Build started on 'date'
+      - echo Building the Docker image...
+      - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
+      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+      - echo Docker image pushed succesfully.
