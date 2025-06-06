@@ -23,7 +23,7 @@ def fetch_ois_data():
     scraper = cloudscraper.create_scraper(
         browser={
             'browser': 'chrome',
-            'platform': 'windows',
+            'platform': 'darwin',
             'mobile': False
         }
     )
