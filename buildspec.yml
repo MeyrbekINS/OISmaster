@@ -1,5 +1,4 @@
 version: 0.2
-
 env:
   variables: # Standard environment variables
     AWS_ACCOUNT_ID: "305362906248"
@@ -9,7 +8,6 @@ env:
   secrets-manager:
     DOCKERHUB_USERNAME: "DockerHubCredentials1:username"
     DOCKERHUB_PASSWORD: "DockerHubCredentials1:password"
-
 phases:
   pre_build:
     commands:
