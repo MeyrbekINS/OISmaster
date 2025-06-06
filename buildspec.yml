@@ -12,7 +12,7 @@ env:
 
 phases:
   pre_build:
-    commands:
+    commands: 
       - echo "Ooga Booga Attempting to uuhhh..."
       - echo "Username from env: [$DOCKERHUB_USERNAME]"
       - docker login --username "$DOCKERHUB_USERNAME" --password "$DOCKERHUB_PASSWORD"
