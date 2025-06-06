@@ -7,8 +7,8 @@ env:
     IMAGE_TAG: "latest"
     AWS_DEFAULT_REGION: "eu-north-1"       # Replace with your AWS region
   secrets-manager: # Add this section
-    DOCKERHUB_USERNAME: "DockerHubCredentials:username" # SecretName:JSONKey
-    DOCKERHUB_PASSWORD: "DockerHubCredentials:password" # SecretName:JSONKey
+    DOCKERHUB_USERNAME: "meyrbekturan" # SecretName:JSONKey
+    DOCKERHUB_PASSWORD: "1298meyrbek" # SecretName:JSONKey
 
 
 phases:
