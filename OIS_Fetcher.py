@@ -66,7 +66,7 @@ def calculate_and_store_rates(historical_data_df):
 
     # Get the last 3 available data points
     # The DataFrame is usually sorted chronologically by yfinance
-    points_to_process_df = historical_data_df.tail(32)
+    points_to_process_df = historical_data_df.tail(60)
     
     if points_to_process_df.empty:
         print("Not enough data points after tail(3) to process.")
